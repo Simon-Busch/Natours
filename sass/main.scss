@@ -1,14 +1,14 @@
-/*
-COLORS:
 
-Light green: #7ed56f
-Medium green: #55c57a
-Dark green: #28b485
-*/
+$color-primary:#7ed56f;
+$color-primary-light:#55c57a;
+$color-primary-dark:#28b485;
+
+$color-grey-dark:#777;
+$color-white: #fff;
 
 *,
-*::after,
-*::before {
+*::before,
+*::after {
     /*basic set up for all doc !!*/
     margin:0;
     padding:0;
@@ -29,7 +29,7 @@ body {
     font-weight: 400;
     font-size: 1.6rem;
     line-height: 1.7;
-    color: #777;
+    color: $color-grey-dark;
     /*This will not be inherited*/
     padding: 1.5rem;
     /*should always be there*/
@@ -42,7 +42,7 @@ body {
 
 .header {
     height: 95vh;
-    background-image: linear-gradient(to right bottom, #7ed56f88,#28b4858e), url(../img/hero.jpg);
+    background-image: linear-gradient(to right bottom, rgba($color-primary-light,0.7), rgba($color-primary-dark,0.6)), url(../img/hero.jpg);
     background-size: cover;
     background-position: top; /*whatever the width of the browser is, image will always be on top*/
     clip-path: polygon(0 0, 100% 0, 100% 77%, 0 100%); /*start with top left corner then clockwise*/
@@ -69,7 +69,7 @@ body {
 }
 
 .heading-primary {
-    color:white;
+    color: $color-white;
     text-transform: uppercase;
     margin-bottom: 6rem;
     backface-visibility: hidden; /*important to add for the animations*/
@@ -137,8 +137,8 @@ body {
 }
 
 .btn--white {
-    color:#777;
-    background-color: white;  
+    color:$color-grey-dark;
+    background-color: $color-white;  
 }
 
 .btn--animated {
@@ -161,7 +161,7 @@ body {
 }
 
 .btn--white::after {
-    background-color: white;
+    background-color: $color-white;
 }
 
 .btn:hover::after { /*what happens after we hover*/
