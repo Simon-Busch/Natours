@@ -1,0 +1,21 @@
+//follow the right order for import
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+@import "base/base" ;
+//no need to write "_base.scss"
+@import "base/animation";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/button";
+
+@import "layout/header";
+@import "layout/grid";
+
+@import "pages/home";
+
+/*structure is more for big multipage projects*/
+
+

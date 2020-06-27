@@ -1,0 +1,61 @@
+/***************************************
+*BUTTONS 
+****************************************/
+
+
+.btn {
+    &:link,
+    &:visited {
+        text-decoration: none;
+        text-transform: uppercase;
+        display: inline-block;
+        padding: 1.5rem 4rem;
+        border-radius: 5rem;
+        font-size: 1.6rem;
+        transition: all 0.2s;
+        position:relative;
+    }
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 1rem 2rem rgba($color-black, 0.199);
+    }
+
+    &:active {
+        transform: translateY(-1px); /*give the impression to actually click on it*/
+        box-shadow: 0 .5rem 1rem rgba($color-black, 0.199); /*different values for Y axis and blur value to decrease the shadow*/
+    }
+
+    &--white {
+        color:$color-grey-dark;
+        background-color: $color-white;  
+    }
+
+    &--animated {
+        animation: moveInBottom 1.3s ease-out 0.75s; /*75s is the delay*/
+        animation-fill-mode: backwards; /*before the animation really starts, the element doesn't appear*/
+    }
+
+    &::after{/*treated as a child of the button*/
+        content:''; /*mandatory to mention it even if empty*/
+        display:inline-block;
+        height:100%;
+        width:100%;
+        border-radius:10rem;
+        /*to make it appear behind*/
+        position:absolute; 
+        top:0;
+        left:0;
+        z-index: -1;
+        transition: all .3s;
+    }
+
+    &--white::after{
+        background-color: $color-white;
+    }
+
+    &:hover::after{ /*what happens after we hover*/
+        transform: scaleX(1.4) scaleY(1.6); /*increase the element*/
+        opacity: 0; /*going to opacity 0*/
+    }
+}

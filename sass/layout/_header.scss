@@ -1,0 +1,31 @@
+/***************************************
+*HEADER
+****************************************/
+
+.header {
+    height: 95vh;
+    background-image: linear-gradient(to right bottom, rgba($color-primary-light,0.7), rgba($color-primary-dark,0.6)), url(../img/hero.jpg);
+    background-size: cover;
+    background-position: top; /*whatever the width of the browser is, image will always be on top*/
+    clip-path: polygon(0 0, 100% 0, 100% 77%, 0 100%); /*start with top left corner then clockwise*/
+    position:relative;
+
+    &__logo-box { /*& refers to ".headers"*/
+        position: absolute;
+        top: 2rem; /*! counting from the header as it's  the parent element with position should be set to relative*/
+        left: 2rem;
+    }
+
+    &__logo {
+        height: 3rem;
+        width: auto;
+    }
+
+    &__text-box {
+        position: absolute;
+        top:30%; /*will align the BEGINNING of the box*/
+        left:50%;
+        transform: translate(-50%,-50%); /*will move the box itself according to the position mentionned above*/
+        text-align: center;
+    }
+}

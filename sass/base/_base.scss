@@ -1,0 +1,26 @@
+/***************************************
+*MAIN
+****************************************/
+//this file shoud have all the basic definition about our project
+
+*,
+*::before,
+*::after {
+    /*basic set up for all doc !!*/
+    margin:0;
+    padding:0;
+    box-sizing: inherit;  /*force inheritance from the body*/
+}
+
+html { /*set up the root file*/
+    font-size: 62.5%; 
+    /*should always use it*/
+    /*this is because many people have to increase font size of the website to see properly*/
+    /*Default of HTML is 16% but we want 10px, which is 62.5% of 16px*/
+    /*easier to start with 10 becaus e 1rem = 10px easier for conversion  */
+}
+
+body {
+    /*should always be there*/
+    box-sizing: border-box;
+}

@@ -1,0 +1,50 @@
+body {
+    /*all this will be inherited to all childs*/
+    font-family: Lato, sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.7;
+    color: $color-grey-dark;
+    /*This will not be inherited*/
+    padding: 1.5rem;
+}
+
+
+.heading-primary {
+    color: $color-white;
+    text-transform: uppercase;
+    margin-bottom: 6rem;
+    backface-visibility: hidden; /*important to add for the animations*/
+
+    &--main {
+        display:block; /*a block takes the entire width and create a linebreak*/
+        font-size: 5.5rem;
+        font-weight: 400;
+        letter-spacing: 3.6rem;
+    
+        animation-name: moveInLeft;
+        animation-duration: 1.5s;
+        
+        /*animation-delay: 2s;*/    
+        /*Would create a delay before starting the animation*/
+    
+        /*animation-iteration-count: 3;*/ 
+        /*would repeat the animation*/
+    
+        /*animation-timing-function: ease-in;*/
+        /*check mdn doc*/
+    }
+
+    &--sub {
+        display:block;
+        font-size: 2rem;
+        font-weight: 400;
+        letter-spacing: 1.65rem;
+    
+        animation: moveInRight 1.5s;
+        /*
+        animation-name: moveInRight;
+        animation-duration: 1.5s;
+        */
+    }
+}
