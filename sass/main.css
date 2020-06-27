@@ -236,6 +236,18 @@ body {
   margin-bottom: 1.5rem;
 }
 
+.u-margin-top-huge {
+  margin-top: 10rem;
+}
+
+.u-margin-top-big {
+  margin-top: 8rem;
+}
+
+.u-margin-top-small {
+  margin-top: 5rem;
+}
+
 /***************************************
 *BUTTONS 
 ****************************************/
@@ -270,6 +282,11 @@ body {
 .btn--white {
   color: #777;
   background-color: #fff;
+}
+
+.btn--green {
+  background-color: #7ed56f;
+  color: #fff;
 }
 
 .btn--animated {
@@ -417,6 +434,182 @@ body {
           transform: translateY(-1.5rem) scale(1.03);
 }
 
+.card {
+  -webkit-perspective: 150rem;
+          perspective: 150rem;
+  /*give our card perspective*/
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 51rem;
+}
+
+.card__side {
+  height: 51rem;
+  /*important to repeat same as the parent element*/
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  /*"ease" is important as well*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  /*hide the backpart of an element (can't see the card from the backpart)*/
+  border-radius: 5px;
+  -webkit-box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+          box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  /*because the image overflow the parent and we still want the border-radius*/
+}
+
+.card__side--front {
+  background-color: #fff;
+}
+
+.card__side--back {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  /*before we hover the card, the back is already flipped*/
+}
+
+.card__side--back-1 {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#ffb900), to(#ff7730));
+  background-image: linear-gradient(to bottom right, #ffb900, #ff7730);
+}
+
+.card__side--back-2 {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#55c57a), to(#28b485));
+  background-image: linear-gradient(to bottom right, #55c57a, #28b485);
+}
+
+.card__side--back-3 {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#2998ff), to(#5643fa));
+  background-image: linear-gradient(to bottom right, #2998ff, #5643fa);
+}
+
+.card:hover .card__side--front {
+  /*when we over the card, we want the FRONT SIDE  to transform*/
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+}
+
+.card:hover .card__side--back {
+  /*come back to initial stage and become visible*/
+  -webkit-transform: rotateY(0);
+          transform: rotateY(0);
+}
+
+.card__picture {
+  background-size: cover;
+  height: 23rem;
+  background-blend-mode: screen;
+  /*important to blend the image and the gradient*/
+  /*should always start by the prefix even if we add it after*/
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+}
+
+.card__picture--1 {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#ffb900), to(#ff7730)), url(../img/nat-5.jpg);
+  background-image: linear-gradient(to bottom right, #ffb900, #ff7730), url(../img/nat-5.jpg);
+  /*!!relative to the "compiled" main.css file, that's why we move one layer up*/
+}
+
+.card__picture--2 {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#55c57a), to(#28b485)), url(../img/nat-6.jpg);
+  background-image: linear-gradient(to bottom right, #55c57a, #28b485), url(../img/nat-6.jpg);
+  /*!!relative to the "compiled" main.css file, that's why we move one layer up*/
+}
+
+.card__picture--3 {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#2998ff), to(#5643fa)), url(../img/nat-7.jpg);
+  background-image: linear-gradient(to bottom right, #2998ff, #5643fa), url(../img/nat-7.jpg);
+  /*!!relative to the "compiled" main.css file, that's why we move one layer up*/
+}
+
+.card__heading {
+  font-size: 2.8rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-align: right;
+  color: #fff;
+  position: absolute;
+  top: 12rem;
+  right: 2rem;
+  width: 75%;
+  margin-right: 1rem;
+}
+
+.card__heading--span {
+  /*not really a child of heading, not a modifier, not an element of heading*/
+  padding: 1rem 1.5rem;
+  box-decoration-break: clone;
+  /*important to align perfectly the text, it will treat it as 2 separate entities*/
+  -webkit-box-decoration-break: clone;
+}
+
+.card__heading--span--1 {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 185, 0, 0.85)), to(rgba(255, 119, 48, 0.85)));
+  background-image: linear-gradient(to bottom right, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85));
+}
+
+.card__heading--span--2 {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(85, 197, 122, 0.85)), to(rgba(40, 180, 133, 0.85)));
+  background-image: linear-gradient(to bottom right, rgba(85, 197, 122, 0.85), rgba(40, 180, 133, 0.85));
+}
+
+.card__heading--span--3 {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(41, 152, 255, 0.85)), to(rgba(86, 67, 250, 0.85)));
+  background-image: linear-gradient(to bottom right, rgba(41, 152, 255, 0.85), rgba(86, 67, 250, 0.85));
+}
+
+.card__details {
+  padding: 3rem;
+}
+
+.card__details ul {
+  width: 90%;
+  list-style: none;
+  margin: 0 auto;
+  /*easy way to center*/
+}
+
+.card__details ul li {
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+.card__details ul li:not(:last-child) {
+  border-bottom: 1px solid #eee;
+}
+
+.card__cta {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 90%;
+  text-align: center;
+}
+
+.card__price-box {
+  color: #fff;
+  margin-bottom: 8rem;
+}
+
+.card__price-only {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+}
+
+.card__price-value {
+  font-size: 6rem;
+  font-weight: 100;
+}
+
 /***************************************
 *HEADER
 ****************************************/
@@ -427,9 +620,9 @@ body {
   background-size: cover;
   background-position: top;
   /*whatever the width of the browser is, image will always be on top*/
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-          clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   /*start with top left corner then clockwise*/
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   position: relative;
 }
 
@@ -534,6 +727,12 @@ body {
   -webkit-transform: skewY(7deg);
           transform: skewY(7deg);
   /* why here we have 7 ? to it cancels the skew applied above, we don't want the elements to be skewed */
+}
+
+.section-tours {
+  background-color: #f7f7f7;
+  padding: 25rem 0 15rem 0;
+  margin-top: -10rem;
 }
 
 /*structure is more for big multipage projects*/

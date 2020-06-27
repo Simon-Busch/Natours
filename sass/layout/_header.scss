@@ -8,6 +8,7 @@
     background-size: cover;
     background-position: top; /*whatever the width of the browser is, image will always be on top*/
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /*start with top left corner then clockwise*/
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
     position:relative;
 
     &__logo-box { /*& refers to ".headers"*/

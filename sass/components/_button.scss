@@ -31,6 +31,11 @@
         background-color: $color-white;  
     }
 
+    &--green {
+        background-color: $color-primary;
+        color:$color-white;
+    }
+
     &--animated {
         animation: moveInBottom 1.3s ease-out 0.75s; /*75s is the delay*/
         animation-fill-mode: backwards; /*before the animation really starts, the element doesn't appear*/

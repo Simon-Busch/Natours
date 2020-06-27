@@ -17,3 +17,9 @@
         /* why here we have 7 ? to it cancels the skew applied above, we don't want the elements to be skewed */
     }
 }
+
+.section-tours {
+    background-color: $color-grey-light-1;
+    padding: 25rem 0 15rem 0;
+    margin-top: -10rem;
+}
