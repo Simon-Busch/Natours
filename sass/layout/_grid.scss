@@ -1,7 +1,6 @@
 
 .row {
     max-width: $grid-width; /*Kind of standard : 1140px*/
-    background-color: rgb(209, 207, 207);
     margin: 0 auto; /*center block element inside a block element*/
     
     &:not(:last-child) {
@@ -12,7 +11,7 @@
 
     [class^= "col-"]  {/*attribute selector ^ will select all classes that start with the value*/
         /*NB: could be "*" as well, means contains*/
-        background-color: orange;
+
         float: left;
 
         &:not(:last-child){

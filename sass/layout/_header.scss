@@ -7,7 +7,7 @@
     background-image: linear-gradient(to right bottom, rgba($color-primary-light,0.7), rgba($color-primary-dark,0.6)), url(../img/hero.jpg);
     background-size: cover;
     background-position: top; /*whatever the width of the browser is, image will always be on top*/
-    clip-path: polygon(0 0, 100% 0, 100% 77%, 0 100%); /*start with top left corner then clockwise*/
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /*start with top left corner then clockwise*/
     position:relative;
 
     &__logo-box { /*& refers to ".headers"*/
