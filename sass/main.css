@@ -1,3 +1,9 @@
+/*
+position: absolute;
+top:50%;
+left:50%;
+transform: translate(-50%,-50%);
+*/
 /*Colors*/
 /*Grid*/
 /*Font*/
@@ -996,6 +1002,183 @@ body {
 
 .footer__copyright-2 {
   font-size: .7rem;
+}
+
+.footer__github {
+  font-size: 2.3rem;
+  color: #fff;
+  margin-left: 1rem;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+
+.footer__github:hover {
+  color: #7ed56f;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.navigation__checkbox {
+  display: none;
+}
+
+.navigation__button {
+  background-color: #fff;
+  height: 7rem;
+  /*1rem more than the background to fully cover it*/
+  width: 7rem;
+  position: fixed;
+  top: 6rem;
+  /*.5 is because it's 1/2 the size different*/
+  right: 6rem;
+  border-radius: 50%;
+  z-index: 2000;
+  /*more than the background*/
+  -webkit-box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+  text-align: center;
+  cursor: pointer;
+}
+
+.navigation__background {
+  /*first do the circle behind*/
+  height: 6rem;
+  width: 6rem;
+  border-radius: 50%;
+  position: fixed;
+  /*won't change position as we scroll the page*/
+  top: 6.5rem;
+  right: 6.5rem;
+  background-image: radial-gradient(#55c57a, #28b485);
+  z-index: 1000;
+  -webkit-transition: -webkit-transform 1.3s cubic-bezier(0.83, 0, 0.17, 1);
+  transition: -webkit-transform 1.3s cubic-bezier(0.83, 0, 0.17, 1);
+  transition: transform 1.3s cubic-bezier(0.83, 0, 0.17, 1);
+  transition: transform 1.3s cubic-bezier(0.83, 0, 0.17, 1), -webkit-transform 1.3s cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+.navigation__nav {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1500;
+  /*between background and button, as button must stay on top */
+  opacity: 0;
+  width: 0;
+  /*otherwise the links are still there and work but just invisible*/
+  /*the value of 0 for width is just for when the menu is not shown*/
+  -webkit-transition: all 1.3s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  transition: all 1.3s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+.navigation__list {
+  list-style: none;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.navigation__item {
+  display: inline-block;
+  background-color: black;
+  margin: 1rem;
+}
+
+.navigation__link:link, .navigation__link:visited {
+  display: inline-block;
+  font-size: 3rem;
+  font-weight: 300;
+  padding: .2rem 2rem;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #fff 50%);
+  background-size: 220%;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.navigation__link:link span, .navigation__link:visited span {
+  margin-right: 1.5rem;
+  display: inline-block;
+}
+
+.navigation__link:hover, .navigation__link:active {
+  background-position: 100%;
+  color: #28b485;
+  -webkit-transform: translateX(1rem);
+          transform: translateX(1rem);
+  border-radius: 25px;
+}
+
+.navigation__checkbox:checked ~ .navigation__background {
+  -webkit-transform: scale(80);
+          transform: scale(80);
+}
+
+.navigation__checkbox:checked ~ .navigation__nav {
+  opacity: 1;
+  width: 100%;
+}
+
+.navigation__icon {
+  position: relative;
+  margin-top: 3.5rem;
+}
+
+.navigation__icon, .navigation__icon::before, .navigation__icon::after {
+  width: 3rem;
+  height: 2px;
+  background-color: #1f1f1f;
+  display: inline-block;
+}
+
+.navigation__icon::before, .navigation__icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  -webkit-transition: all .7s;
+  transition: all .7s;
+}
+
+.navigation__icon::before {
+  top: -.8rem;
+}
+
+.navigation__icon::after {
+  top: .8rem;
+}
+
+.navigation__button:hover .navigation__icon::before {
+  top: -1rem;
+}
+
+.navigation__button:hover .navigation__icon::after {
+  top: 1rem;
+}
+
+.navigation__checkbox:checked + .navigation__button .navigation__icon {
+  background-color: transparent;
+  /*will make the middle line disapear*/
+}
+
+.navigation__checkbox:checked + .navigation__button .navigation__icon::before {
+  top: 0;
+  /*to have it centered and make the the X */
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+  /*could be 45deg as well*/
+}
+
+.navigation__checkbox:checked + .navigation__button .navigation__icon::after {
+  top: 0;
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
 }
 
 .section-about {
