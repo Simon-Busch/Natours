@@ -23,7 +23,7 @@
         height:6rem;
         width:6rem;
         border-radius: 50%;
-        position:fixed; /*won't change position as we scroll the page*/
+        position:fixed; /*won't change  position as we scroll the page*/
         top:6.5rem;
         right:6.5rem;
         background-image: radial-gradient($color-primary-light, $color-primary-dark);  
@@ -54,8 +54,7 @@
     }
 
     &__item {
-        display: inline-block;
-        background-color:black;
+        display: block;
         margin: 1rem;
     }
 
