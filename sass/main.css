@@ -221,37 +221,37 @@ body {
 }
 
 .u-center-text {
-  text-align: center;
+  text-align: center !important;
 }
 
 .u-margin-bottom-big {
-  margin-bottom: 8rem;
+  margin-bottom: 8rem !important;
 }
 
 .u-margin-bottom-medium {
-  margin-bottom: 4rem;
+  margin-bottom: 4rem !important;
 }
 
 .u-margin-bottom-small {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem !important;
 }
 
 .u-margin-top-huge {
-  margin-top: 10rem;
+  margin-top: 10rem !important;
 }
 
 .u-margin-top-big {
-  margin-top: 8rem;
+  margin-top: 8rem !important;
 }
 
 .u-margin-top-small {
-  margin-top: 5rem;
+  margin-top: 5rem !important;
 }
 
 /***************************************
 *BUTTONS 
 ****************************************/
-.btn:link, .btn:visited {
+.btn, .btn:link, .btn:visited {
   text-decoration: none;
   text-transform: uppercase;
   display: inline-block;
@@ -261,6 +261,8 @@ body {
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
   position: relative;
+  border: none;
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -270,7 +272,8 @@ body {
           box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.199);
 }
 
-.btn:active {
+.btn:active, .btn:focus {
+  outline: none;
   -webkit-transform: translateY(-1px);
           transform: translateY(-1px);
   /*give the impression to actually click on it*/
@@ -721,6 +724,117 @@ body {
      object-fit: cover;
 }
 
+.form__group:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.form__input {
+  font-family: inherit;
+  /*by default form doesn't inherit the font-family*/
+  color: inherit;
+  font-size: 1.5rem;
+  padding: 1.5rem 2rem;
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  border-bottom: 3px solid transparent;
+  /*so the box doesn't move when focused*/
+  display: block;
+  width: 90%;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.form__input:focus {
+  outline: none;
+  -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  border-bottom: 3px solid #7ed56f;
+}
+
+.form__input:focus:invalid {
+  /*when we have an invalid focused input element*/
+  border-bottom: 3px solid #ff7730;
+}
+
+.form__input::-webkit-input-placeholder {
+  color: #5c5c5c;
+}
+
+.form__label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-left: 2rem;
+  margin-top: .7rem;
+  display: block;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.form__input:placeholder-shown + .form__label {
+  /*when the placeholder is shown on the input, we can style it*/
+  /* "+" is to select the adjacent sibling as input is not the parent of label*/
+  /*label has to be AFTER THE INPUT in order to be selected this way*/
+  opacity: 0;
+  visibility: hidden;
+  /*NB: we use the opacity because we can't animate the visibility*/
+  -webkit-transform: translateY(-4rem);
+          transform: translateY(-4rem);
+  /*will go from up to down on Y axis*/
+}
+
+.form__radio-input {
+  display: none;
+  /*hide the basic radio button*/
+}
+
+.form__radio-group {
+  width: 49%;
+  display: inline-block;
+}
+
+.form__radio-label {
+  font-size: 1.6rem;
+  cursor: pointer;
+  position: relative;
+  padding-left: 4.5rem;
+}
+
+.form__radio-button {
+  height: 3rem;
+  width: 3rem;
+  border: 5px solid #7ed56f;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: -.3rem;
+}
+
+.form__radio-button::after {
+  /*inner circle*/
+  content: "";
+  display: block;
+  height: 1.3rem;
+  width: 1.3rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #7ed56f;
+  opacity: 0;
+  -webkit-transition: all, .3s;
+  transition: all, .3s;
+}
+
+.form__radio-input:checked ~ .form__radio-label .form__radio-button::after {
+  /*animate our button once checked*/
+  /*as soon we hit the label element the radio input becomes checked, then we want to change the child ( radio-buton )*/
+  opacity: 1;
+}
+
 /***************************************
 *HEADER
 ****************************************/
@@ -850,6 +964,26 @@ body {
   padding: 14rem 0;
   position: relative;
   /*we set the bg vid to position absolute*/
+}
+
+.section-book {
+  padding: 15rem 0;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#55c57a), to(#28b485));
+  background-image: linear-gradient(to right bottom, #55c57a, #28b485);
+}
+
+.book {
+  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 50%, transparent 50%), url(/img/nat-10.jpg);
+  background-size: cover;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3);
+          box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3);
+  height: 50rem;
+}
+
+.book__form {
+  width: 50%;
+  padding: 6rem;
 }
 
 /*structure is more for big multipage projects*/
