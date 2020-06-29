@@ -1,5 +1,32 @@
+/*make sens to have all media queries in the Mixin*/
+/*
+0-600px       -> phone
+600 - 900px   -> Tablet portrait
+900 - 1200px  -> tablet Landscape
+1200 - 180px  -> normal style writen already
+1800px +      -> Big desktop
+
+
+$breakpoint argument choices :
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+
+ORDER :
+1)Base +typography 
+
+2)General layout (header -footer ..)  + grid
+
+3)Page layout
+
+4)Componenents
+*/
+/*1em = 16px*/
 /*Colors*/
 /*Grid*/
+/*for media queries*/
 /*Font*/
 /***************************************
 *MAIN
@@ -22,12 +49,44 @@ html {
   /*this is because many people have to increase font size of the website to see properly*/
   /*Default of HTML is 16% but we want 10px, which is 62.5% of 16px*/
   /*easier to start with 10 becaus e 1rem = 10px easier for conversion  */
+  /*we don't need the (phone - MAX600) because we want 1rem = 8px, so if we don't
+    specify, it will fall into tab-port which is MAX 900*/
+  /*ATTENTION ORDER IS SUPER IMPORTANT*/
+  /*= 1200px*/
+  /*= 900px*/
+  /*= 1800px*/
+}
+
+@media (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+
+@media (max-width: 56.25em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media (min-width: 112.5em) {
+  html {
+    font-size: 75%;
+  }
 }
 
 body {
   /*should always be there*/
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  padding: 1.5rem;
+  /*= 900px*/
+}
+
+@media (max-width: 56.25em) {
+  body {
+    padding: 0;
+  }
 }
 
 /***************************************
@@ -141,7 +200,6 @@ body {
   line-height: 1.7;
   color: #777;
   /*This will not be inherited*/
-  padding: 1.5rem;
 }
 
 .heading-primary {
@@ -169,6 +227,14 @@ body {
   /*would repeat the animation*/
   /*animation-timing-function: ease-in;*/
   /*check mdn doc*/
+  /*= 600px*/
+}
+
+@media (max-width: 37.5em) {
+  .heading-primary--main {
+    letter-spacing: 1rem;
+    font-size: 4.5rem;
+  }
 }
 
 .heading-primary--sub {
@@ -182,6 +248,14 @@ body {
         animation-name: moveInRight;
         animation-duration: 1.5s;
         */
+  /*= 600px*/
+}
+
+@media (max-width: 37.5em) {
+  .heading-primary--sub {
+    letter-spacing: .5rem;
+    font-size: 1.5rem;
+  }
 }
 
 .heading-secondary {
@@ -198,6 +272,20 @@ body {
   color: transparent;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+  /*= 900px*/
+  /*= 600px*/
+}
+
+@media (max-width: 56.25em) {
+  .heading-secondary {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 37.5em) {
+  .heading-secondary {
+    font-size: 2.5rem;
+  }
 }
 
 .heading-secondary:hover {
@@ -950,6 +1038,22 @@ body {
   /*start with top left corner then clockwise*/
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   position: relative;
+  /*= 900px*/
+  /*= 600px*/
+}
+
+@media (max-width: 56.25em) {
+  .header {
+    clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+  }
+}
+
+@media (max-width: 37.5em) {
+  .header {
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+  }
 }
 
 .header__logo-box {
@@ -981,11 +1085,27 @@ body {
   /*Kind of standard : 1140px*/
   margin: 0 auto;
   /*center block element inside a block element*/
+  /*= 900px*/
 }
 
 .row:not(:last-child) {
   margin-bottom: 8rem;
   /*everything will have this property EXCEPT  the last child*/
+  /*= 900px*/
+}
+
+@media (max-width: 56.25em) {
+  .row:not(:last-child) {
+    margin-bottom: 6rem;
+    /*defines afterward and set the gutter to 6rem*/
+  }
+}
+
+@media (max-width: 56.25em) {
+  .row {
+    max-width: 50rem;
+    padding: 0 3rem;
+  }
 }
 
 .row::after {
@@ -998,10 +1118,26 @@ body {
   /*attribute selector ^ will select all classes that start with the value*/
   /*NB: could be "*" as well, means contains*/
   float: left;
+  /*= 900px*/
 }
 
 .row [class^="col-"]:not(:last-child) {
   margin-right: 6rem;
+  /*= 900px*/
+}
+
+@media (max-width: 56.25em) {
+  .row [class^="col-"]:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 6rem;
+  }
+}
+
+@media (max-width: 56.25em) {
+  .row [class^="col-"] {
+    width: 100% !important;
+    /*means that the grid will stack*/
+  }
 }
 
 .row .col-1-of-2 {
@@ -1034,6 +1170,13 @@ body {
   padding: 1rem 2rem 1.5rem 2rem;
   font-size: 1.4rem;
   color: #f7f7f7;
+  /*= 900px*/
+}
+
+@media (max-width: 56.25em) {
+  .footer {
+    padding: 5rem 0;
+  }
 }
 
 .footer__logo-box {
@@ -1050,6 +1193,14 @@ body {
   border-top: 1px solid #777;
   padding-top: 2rem;
   display: inline-block;
+  /*= 900px*/
+}
+
+@media (max-width: 56.25em) {
+  .footer__navigation {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 .footer__list {
@@ -1133,6 +1284,22 @@ body {
           box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
   text-align: center;
   cursor: pointer;
+  /*= 900px*/
+  /*= 600px*/
+}
+
+@media (max-width: 56.25em) {
+  .navigation__button {
+    top: 4rem;
+    right: 4rem;
+  }
+}
+
+@media (max-width: 37.5em) {
+  .navigation__button {
+    top: 3rem;
+    right: 3rem;
+  }
 }
 
 .navigation__background {
@@ -1150,6 +1317,22 @@ body {
   transition: -webkit-transform 1.3s cubic-bezier(0.83, 0, 0.17, 1);
   transition: transform 1.3s cubic-bezier(0.83, 0, 0.17, 1);
   transition: transform 1.3s cubic-bezier(0.83, 0, 0.17, 1), -webkit-transform 1.3s cubic-bezier(0.83, 0, 0.17, 1);
+  /*= 900px*/
+  /*= 600px*/
+}
+
+@media (max-width: 56.25em) {
+  .navigation__background {
+    top: 4.5rem;
+    right: 4.5rem;
+  }
+}
+
+@media (max-width: 37.5em) {
+  .navigation__background {
+    top: 3.5rem;
+    right: 3.5rem;
+  }
 }
 
 .navigation__nav {
@@ -1277,7 +1460,7 @@ body {
 
 .section-about {
   background-color: #f7f7f7;
-  padding: 25rem 0;
+  padding: 45rem 0;
   margin-top: -25vh;
   /*move up until the green background in header*/
 }
