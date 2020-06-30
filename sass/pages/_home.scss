@@ -1,7 +1,14 @@
 .section-about {
     background-color: $color-grey-light-1;
-    padding:45rem 0;
-    margin-top: -25vh; /*move up until the green background in header*/
+    padding:25rem 0;
+    margin-top: -20vh; /*move up until the green background in header*/
+    @include respond(tab-port) {
+        padding: 20rem 0;
+    }
+
+    @include respond(phone) {
+        padding: 24rem 0;
+    }
 }
 
 .section-features {
@@ -16,22 +23,43 @@
         transform: skewY(7deg);
         /* why here we have 7 ? to it cancels the skew applied above, we don't want the elements to be skewed */
     }
+
+    @include respond(tab-port) {
+        padding: 10rem 0;
+    }
 }
 
 .section-tours {
     background-color: $color-grey-light-1;
     padding: 25rem 0 15rem 0;
     margin-top: -7rem;
+
+    @include respond(tab-port) {
+        padding: 20rem 0 10rem 0;
+    }
+
+    @include respond(phone) {
+        padding: 15rem 0 10rem 0;
+    }
 }
 
 .section-stories {
     padding: 14rem 0;
     position: relative; /*we set the bg vid to position absolute*/
+
+    @include respond(tab-port) {
+        padding: 10rem 0 ;
+    }
+    
 }
 
 .section-book {
     padding:15rem 0;
     background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+
+    @include respond(tab-port) {
+        padding: 10rem 0;
+    }
 }
 
 .book {
