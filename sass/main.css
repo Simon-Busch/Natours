@@ -861,19 +861,25 @@ body {
   width: 15rem;
   height: 15rem;
   float: left;
-  /*defines where the element float*/
-  shape-outside: circle(50% at 50% 50%);
-  /*50% is relative to the width of the element*/
-  /*in order to work, we need a defined width/height and floating element*/
-  -webkit-shape-outside: circle(50% at 50% 50%);
-  /*this is mandatory for safari*/
-  /*defines the shape itself*/
-  clip-path: circle(50% at 50% 50%);
-  -webkit-clip-path: circle(50% at 50% 50%);
   /* this is how to give it some space*/
   -webkit-transform: translateX(-3rem) skewX(12deg);
           transform: translateX(-3rem) skewX(12deg);
+  overflow: hidden;
+  border-radius: 50%;
   /*= 600px*/
+}
+
+@supports ((-webkit-clip-path: polygon(0 0)) or (clip-path: polygon(0 0))) or (-webkit-clip-path: polygon(0 0)) {
+  .story__shape {
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    /*this is mandatory for safari*/
+    /*defines the shape itself*/
+    shape-outside: circle(50% at 50% 50%);
+    /*50% is relative to the width of the element*/
+    /*in order to work, we need a defined width/height and floating element*/
+    border-radius: none;
+  }
 }
 
 @media (max-width: 37.5em) {
@@ -1099,7 +1105,17 @@ body {
   visibility: hidden;
   -webkit-transition: all .8s;
   transition: all .8s;
+  /*GRACEFUL DEGRADATION
+    IF the feature is supported, then it's applied*/
   /*open state of the popup*/
+}
+
+@supports ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
+  .popup {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.3);
+  }
 }
 
 .popup__content {
@@ -1235,18 +1251,36 @@ body {
 *HEADER
 ****************************************/
 .header {
-  height: 95vh;
-  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(85, 197, 122, 0.7)), to(rgba(40, 180, 133, 0.6))), url(../img/hero.jpg);
-  background-image: linear-gradient(to right bottom, rgba(85, 197, 122, 0.7), rgba(40, 180, 133, 0.6)), url(../img/hero.jpg);
+  height: 85vh;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(85, 197, 122, 0.7)), to(rgba(40, 180, 133, 0.6))), url(../img/hero-small.jpg);
+  background-image: linear-gradient(to right bottom, rgba(85, 197, 122, 0.7), rgba(40, 180, 133, 0.6)), url(../img/hero-small.jpg);
   background-size: cover;
   background-position: top;
   /*whatever the width of the browser is, image will always be on top*/
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   /*start with top left corner then clockwise*/
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   position: relative;
   /*= 900px*/
   /*= 600px*/
+}
+
+@supports ((-webkit-clip-path: polygon(0 0)) or (clip-path: polygon(0 0))) or (-webkit-clip-path: polygon(0 0)) {
+  .header {
+    /*value of the polygon doesn't matter,we are just test if the feature is supported*/
+    height: 95vh;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
+  .header {
+    /*reference for high res screen and higher than 600px screen*/
+    /*NB : in css, the ","is acting as OR*/
+    background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(85, 197, 122, 0.7)), to(rgba(40, 180, 133, 0.6))), url(../img/hero.jpg);
+    background-image: linear-gradient(to right bottom, rgba(85, 197, 122, 0.7), rgba(40, 180, 133, 0.6)), url(../img/hero.jpg);
+  }
 }
 
 @media (max-width: 56.25em) {
@@ -1392,7 +1426,7 @@ body {
 }
 
 .footer__logo {
-  width: 10rem;
+  width: 15rem;
   height: auto;
 }
 
