@@ -3,13 +3,29 @@
 ****************************************/
 
 .header {
-    height: 95vh;
-    background-image: linear-gradient(to right bottom, rgba($color-primary-light,0.7), rgba($color-primary-dark,0.6)), url(../img/hero.jpg);
+    height: 85vh;
+    background-image: linear-gradient(to right bottom, rgba($color-primary-light,0.7), rgba($color-primary-dark,0.6)), url(../img/hero-small.jpg);
     background-size: cover;
     background-position: top; /*whatever the width of the browser is, image will always be on top*/
-    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /*start with top left corner then clockwise*/
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /*start with top left corner then clockwise*/
     position:relative;
+
+
+    @supports(clip-path: polygon(0 0)) or (-webkit-clip-path:polygon(0 0)) { 
+        /*value of the polygon doesn't matter,we are just test if the feature is supported*/
+        height: 95vh;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    }
+
+    @media (min-resolution : 192dpi) and (min-width: 37.5em),
+        (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), /*this is for iphones*/
+        (min-width: 125em) {/*reference for high res screen and higher than 600px screen*/
+        /*NB : in css, the ","is acting as OR*/
+        background-image: linear-gradient(to right bottom, rgba($color-primary-light,0.7), rgba($color-primary-dark,0.6)), url(../img/hero.jpg);
+    }
+
 
     @include respond(tab-port) {
         clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%); 
