@@ -19,8 +19,8 @@
         clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
     }
 
-    @media (min-resolution : 192dpi) and (min-width: 37.5em),
-        (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), /*this is for iphones*/
+    @media  only screen and (min-resolution : 192dpi) and (min-width: 37.5em),  only screen and 
+        (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),  only screen and /*this is for iphones*/
         (min-width: 125em) {/*reference for high res screen and higher than 600px screen*/
         /*NB : in css, the ","is acting as OR*/
         background-image: linear-gradient(to right bottom, rgba($color-primary-light,0.7), rgba($color-primary-dark,0.6)), url(../img/hero.jpg);

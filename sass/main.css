@@ -56,19 +56,19 @@ html {
   /*= 1800px*/
 }
 
-@media (max-width: 75em) {
+@media only screen and (max-width: 75em) {
   html {
     font-size: 56.25%;
   }
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   html {
     font-size: 50%;
   }
 }
 
-@media (min-width: 112.5em) {
+@media only screen and (min-width: 112.5em) {
   html {
     font-size: 75%;
   }
@@ -81,10 +81,15 @@ body {
   /*= 900px*/
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   body {
     padding: 0;
   }
+}
+
+::selection {
+  background-color: #7ed56f;
+  color: #fff;
 }
 
 /***************************************
@@ -168,7 +173,7 @@ body {
   /*= 600px*/
 }
 
-@media (max-width: 37.5em) {
+@media only screen and (max-width: 37.5em) {
   .heading-primary--main {
     letter-spacing: 1rem;
     font-size: 4.5rem;
@@ -188,7 +193,7 @@ body {
   /*= 600px*/
 }
 
-@media (max-width: 37.5em) {
+@media only screen and (max-width: 37.5em) {
   .heading-primary--sub {
     letter-spacing: .5rem;
     font-size: 1.5rem;
@@ -211,13 +216,13 @@ body {
   /*= 600px*/
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .heading-secondary {
     font-size: 3rem;
   }
 }
 
-@media (max-width: 37.5em) {
+@media only screen and (max-width: 37.5em) {
   .heading-secondary {
     font-size: 2.5rem;
   }
@@ -251,7 +256,7 @@ body {
   /*= 900px*/
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .u-margin-bottom-big {
     margin-bottom: 5rem !important;
   }
@@ -262,7 +267,7 @@ body {
   /*= 900px*/
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .u-margin-bottom-medium {
     margin-bottom: 3rem !important;
   }
@@ -396,7 +401,7 @@ body {
   /*= 900px*/
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .composition__photo {
     float: left;
     position: relative;
@@ -411,7 +416,7 @@ body {
   /*= 900px*/
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .composition__photo--p1 {
     top: 0;
     transform: scale(1.2);
@@ -424,7 +429,7 @@ body {
   /*= 900px*/
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .composition__photo--p2 {
     top: -1rem;
     transform: scale(1.3);
@@ -438,7 +443,7 @@ body {
   /*= 900px*/
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .composition__photo--p3 {
     top: 1rem;
     left: 0;
@@ -470,7 +475,7 @@ body {
   /*= 900px*/
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .feature-box {
     padding: 2rem;
   }
@@ -488,7 +493,7 @@ body {
   /*= 900px*/
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .feature-box__icon {
     margin-bottom: 0;
   }
@@ -504,7 +509,6 @@ body {
   -moz-perspective: 150rem;
   position: relative;
   height: 51rem;
-  /*= 900px*/
 }
 
 .card__side {
@@ -657,7 +661,7 @@ body {
   font-weight: 100;
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em), only screen and (hover: none) {
   .card {
     height: auto;
     border-radius: 5px;
@@ -712,7 +716,7 @@ body {
   /*= 600px*/
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .story {
     width: 100%;
     padding: 4rem;
@@ -720,7 +724,7 @@ body {
   }
 }
 
-@media (max-width: 37.5em) {
+@media only screen and (max-width: 37.5em) {
   .story {
     transform: skewX(0);
   }
@@ -739,20 +743,14 @@ body {
   height: 15rem;
   float: left;
   /* this is how to give it some space*/
-<<<<<<< HEAD
   transform: translateX(-3rem) skewX(12deg);
-=======
-  -webkit-transform: translateX(-3rem) skewX(12deg);
-          transform: translateX(-3rem) skewX(12deg);
   overflow: hidden;
   border-radius: 50%;
->>>>>>> e73f14a306debde1e184f6681f43647531c9e809
   /*= 600px*/
 }
 
-@supports ((-webkit-clip-path: polygon(0 0)) or (clip-path: polygon(0 0))) or (-webkit-clip-path: polygon(0 0)) {
+@supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
   .story__shape {
-    -webkit-clip-path: circle(50% at 50% 50%);
     clip-path: circle(50% at 50% 50%);
     /*this is mandatory for safari*/
     /*defines the shape itself*/
@@ -763,7 +761,7 @@ body {
   }
 }
 
-@media (max-width: 37.5em) {
+@media only screen and (max-width: 37.5em) {
   .story__shape {
     transform: translateX(0) skewX(0);
   }
@@ -782,7 +780,7 @@ body {
   /*= 600px*/
 }
 
-@media (max-width: 37.5em) {
+@media only screen and (max-width: 37.5em) {
   .story__text {
     transform: skewX(0);
   }
@@ -855,7 +853,7 @@ body {
   /*= 900px*/
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .form__input {
     width: 100%;
   }
@@ -907,7 +905,7 @@ body {
   /*= 900px*/
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .form__radio-group {
     /*so we will have the bottom one on top of the other*/
     width: 100%;
@@ -971,9 +969,8 @@ body {
   /*open state of the popup*/
 }
 
-@supports ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
+@supports (backdrop-filter: blur(10px)) {
   .popup {
-    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     background-color: rgba(0, 0, 0, 0.3);
   }
@@ -1000,13 +997,13 @@ body {
   /*= 600px*/
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .popup__content {
     width: 90%;
   }
 }
 
-@media (max-width: 37.5em) {
+@media only screen and (max-width: 37.5em) {
   .popup__content {
     width: 100%;
     height: 40rem;
@@ -1020,7 +1017,7 @@ body {
   /*= 600px*/
 }
 
-@media (max-width: 37.5em) {
+@media only screen and (max-width: 37.5em) {
   .popup__left {
     display: table-row;
     width: 100%;
@@ -1036,7 +1033,7 @@ body {
   /*= 600px*/
 }
 
-@media (max-width: 37.5em) {
+@media only screen and (max-width: 37.5em) {
   .popup__right {
     display: table-row;
     width: 100%;
@@ -1049,7 +1046,7 @@ body {
   /*= 600px*/
 }
 
-@media (max-width: 37.5em) {
+@media only screen and (max-width: 37.5em) {
   .popup__img {
     display: inline-block;
     height: 20rem;
@@ -1102,18 +1099,11 @@ body {
 *HEADER
 ****************************************/
 .header {
-<<<<<<< HEAD
-  height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(85, 197, 122, 0.7), rgba(40, 180, 133, 0.6)), url(../img/hero.jpg);
-=======
   height: 85vh;
-  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(85, 197, 122, 0.7)), to(rgba(40, 180, 133, 0.6))), url(../img/hero-small.jpg);
   background-image: linear-gradient(to right bottom, rgba(85, 197, 122, 0.7), rgba(40, 180, 133, 0.6)), url(../img/hero-small.jpg);
->>>>>>> e73f14a306debde1e184f6681f43647531c9e809
   background-size: cover;
   background-position: top;
   /*whatever the width of the browser is, image will always be on top*/
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   /*start with top left corner then clockwise*/
   position: relative;
@@ -1121,32 +1111,30 @@ body {
   /*= 600px*/
 }
 
-@supports ((-webkit-clip-path: polygon(0 0)) or (clip-path: polygon(0 0))) or (-webkit-clip-path: polygon(0 0)) {
+@supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
   .header {
     /*value of the polygon doesn't matter,we are just test if the feature is supported*/
     height: 95vh;
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   }
 }
 
-@media (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
+@media only screen and (min-resolution: 192dpi) and (min-width: 37.5em), only screen and (min-width: 125em) {
   .header {
     /*reference for high res screen and higher than 600px screen*/
     /*NB : in css, the ","is acting as OR*/
-    background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(85, 197, 122, 0.7)), to(rgba(40, 180, 133, 0.6))), url(../img/hero.jpg);
     background-image: linear-gradient(to right bottom, rgba(85, 197, 122, 0.7), rgba(40, 180, 133, 0.6)), url(../img/hero.jpg);
   }
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .header {
     clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
   }
 }
 
-@media (max-width: 37.5em) {
+@media only screen and (max-width: 37.5em) {
   .header {
     clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
@@ -1190,14 +1178,14 @@ body {
   /*= 900px*/
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .row:not(:last-child) {
     margin-bottom: 6rem;
     /*defines afterward and set the gutter to 6rem*/
   }
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .row {
     max-width: 50rem;
     padding: 0 3rem;
@@ -1222,14 +1210,14 @@ body {
   /*= 900px*/
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .row [class^="col-"]:not(:last-child) {
     margin-right: 0;
     margin-bottom: 6rem;
   }
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .row [class^="col-"] {
     width: 100% !important;
     /*means that the grid will stack*/
@@ -1269,7 +1257,7 @@ body {
   /*= 900px*/
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .footer {
     padding: 5rem 0;
   }
@@ -1292,7 +1280,7 @@ body {
   /*= 900px*/
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .footer__navigation {
     width: 100%;
     text-align: center;
@@ -1378,14 +1366,14 @@ body {
   /*= 600px*/
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .navigation__button {
     top: 4rem;
     right: 4rem;
   }
 }
 
-@media (max-width: 37.5em) {
+@media only screen and (max-width: 37.5em) {
   .navigation__button {
     top: 3rem;
     right: 3rem;
@@ -1408,14 +1396,14 @@ body {
   /*= 600px*/
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .navigation__background {
     top: 4.5rem;
     right: 4.5rem;
   }
 }
 
-@media (max-width: 37.5em) {
+@media only screen and (max-width: 37.5em) {
   .navigation__background {
     top: 3.5rem;
     right: 3.5rem;
@@ -1546,13 +1534,13 @@ body {
   /*= 600px*/
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .section-about {
     padding: 20rem 0;
   }
 }
 
-@media (max-width: 37.5em) {
+@media only screen and (max-width: 37.5em) {
   .section-about {
     padding: 24rem 0;
   }
@@ -1575,7 +1563,7 @@ body {
   /* why here we have 7 ? to it cancels the skew applied above, we don't want the elements to be skewed */
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .section-features {
     padding: 10rem 0;
   }
@@ -1589,13 +1577,13 @@ body {
   /*= 600px*/
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .section-tours {
     padding: 20rem 0 10rem 0;
   }
 }
 
-@media (max-width: 37.5em) {
+@media only screen and (max-width: 37.5em) {
   .section-tours {
     padding: 15rem 0 10rem 0;
   }
@@ -1608,7 +1596,7 @@ body {
   /*= 900px*/
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .section-stories {
     padding: 10rem 0;
   }
@@ -1620,7 +1608,7 @@ body {
   /*= 900px*/
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .section-book {
     padding: 10rem 0;
   }
@@ -1635,7 +1623,7 @@ body {
   /*= 900px*/
 }
 
-@media (max-width: 75em) {
+@media only screen and (max-width: 75em) {
   .book {
     background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 65%, transparent 65%), url(/img/nat-10.jpg);
     background-size: cover;
@@ -1645,7 +1633,7 @@ body {
   }
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .book {
     background-image: linear-gradient(to right, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 100%), url(/img/nat-10.jpg);
   }
@@ -1658,13 +1646,13 @@ body {
   /*= 900px*/
 }
 
-@media (max-width: 75em) {
+@media only screen and (max-width: 75em) {
   .book__form {
     width: 65%;
   }
 }
 
-@media (max-width: 56.25em) {
+@media only screen and (max-width: 56.25em) {
   .book__form {
     width: 100%;
   }
