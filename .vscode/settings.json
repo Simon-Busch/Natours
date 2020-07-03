@@ -1,0 +1,5 @@
+{
+    "editor.fontSize": 13,
+    "files.autoSave": "onWindowChange",
+    "liveSassCompile.settings.autoprefix": []
+}

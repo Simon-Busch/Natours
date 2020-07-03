@@ -37,8 +37,7 @@ ORDER :
   /*basic set up for all doc !!*/
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: inherit;
   /*force inheritance from the body*/
 }
 
@@ -77,8 +76,7 @@ html {
 
 body {
   /*should always be there*/
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding: 1.5rem;
   /*= 900px*/
 }
@@ -93,102 +91,45 @@ body {
 *ANIMATIONS 
 ****************************************/
 /*create animation with @keyframes*/
-@-webkit-keyframes moveInLeft {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateX(-10rem) rotate(180deg);
-            transform: translateX(-10rem) rotate(180deg);
-    /*element will arrive from left*/
-  }
-  80% {
-    /*can be set to any %*/
-    -webkit-transform: translateX(2rem);
-            transform: translateX(2rem);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: translate(0);
-            transform: translate(0);
-    /*will arrive at the defined position*/
-  }
-}
 @keyframes moveInLeft {
   0% {
     opacity: 0;
-    -webkit-transform: translateX(-10rem) rotate(180deg);
-            transform: translateX(-10rem) rotate(180deg);
+    transform: translateX(-10rem) rotate(180deg);
     /*element will arrive from left*/
   }
   80% {
     /*can be set to any %*/
-    -webkit-transform: translateX(2rem);
-            transform: translateX(2rem);
+    transform: translateX(2rem);
   }
   100% {
     opacity: 1;
-    -webkit-transform: translate(0);
-            transform: translate(0);
+    transform: translate(0);
     /*will arrive at the defined position*/
-  }
-}
-
-@-webkit-keyframes moveInRight {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateX(10rem) rotate(-180deg);
-            transform: translateX(10rem) rotate(-180deg);
-  }
-  80% {
-    -webkit-transform: translateX(-2rem);
-            transform: translateX(-2rem);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
   }
 }
 
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    -webkit-transform: translateX(10rem) rotate(-180deg);
-            transform: translateX(10rem) rotate(-180deg);
+    transform: translateX(10rem) rotate(-180deg);
   }
   80% {
-    -webkit-transform: translateX(-2rem);
-            transform: translateX(-2rem);
+    transform: translateX(-2rem);
   }
   100% {
     opacity: 1;
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-}
-
-@-webkit-keyframes moveInBottom {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(-6rem);
-            transform: translateY(-6rem);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateX(0);
   }
 }
 
 @keyframes moveInBottom {
   0% {
     opacity: 0;
-    -webkit-transform: translateY(-6rem);
-            transform: translateY(-6rem);
+    transform: translateY(-6rem);
   }
   100% {
     opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
   }
 }
 
@@ -206,8 +147,7 @@ body {
   color: #fff;
   text-transform: uppercase;
   margin-bottom: 6rem;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  backface-visibility: hidden;
   /*important to add for the animations*/
 }
 
@@ -217,10 +157,8 @@ body {
   font-size: 5.5rem;
   font-weight: 400;
   letter-spacing: 3.6rem;
-  -webkit-animation-name: moveInLeft;
-          animation-name: moveInLeft;
-  -webkit-animation-duration: 1.5s;
-          animation-duration: 1.5s;
+  animation-name: moveInLeft;
+  animation-duration: 1.5s;
   /*animation-delay: 2s;*/
   /*Would create a delay before starting the animation*/
   /*animation-iteration-count: 3;*/
@@ -242,8 +180,7 @@ body {
   font-size: 2rem;
   font-weight: 400;
   letter-spacing: 1.65rem;
-  -webkit-animation: moveInRight 1.5s;
-          animation: moveInRight 1.5s;
+  animation: moveInRight 1.5s;
   /*
         animation-name: moveInRight;
         animation-duration: 1.5s;
@@ -262,7 +199,6 @@ body {
   font-size: 3.5rem;
   text-transform: uppercase;
   font-weight: 700;
-  background-image: -webkit-gradient(linear, left top, right top, from(#55c57a), to(#28b485));
   background-image: linear-gradient(to right, #55c57a, #28b485);
   display: inline-block;
   letter-spacing: 2px;
@@ -270,7 +206,6 @@ body {
   -webkit-background-clip: text;
   /*the background will become the text // will be visible on the text*/
   color: transparent;
-  -webkit-transition: all 0.5s;
   transition: all 0.5s;
   /*= 900px*/
   /*= 600px*/
@@ -289,8 +224,7 @@ body {
 }
 
 .heading-secondary:hover {
-  -webkit-transform: skewY(3deg) scale(1.03);
-          transform: skewY(3deg) scale(1.03);
+  transform: skewY(3deg) scale(1.03);
   text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.3);
 }
 
@@ -360,7 +294,6 @@ body {
   padding: 1.5rem 4rem;
   border-radius: 5rem;
   font-size: 1.6rem;
-  -webkit-transition: all 0.2s;
   transition: all 0.2s;
   position: relative;
   border: none;
@@ -368,19 +301,15 @@ body {
 }
 
 .btn:hover {
-  -webkit-transform: translateY(-3px);
-          transform: translateY(-3px);
-  -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.199);
-          box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.199);
+  transform: translateY(-3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.199);
 }
 
 .btn:active, .btn:focus {
   outline: none;
-  -webkit-transform: translateY(-1px);
-          transform: translateY(-1px);
+  transform: translateY(-1px);
   /*give the impression to actually click on it*/
-  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.199);
-          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.199);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.199);
   /*different values for Y axis and blur value to decrease the shadow*/
 }
 
@@ -395,11 +324,9 @@ body {
 }
 
 .btn--animated {
-  -webkit-animation: moveInBottom 1.3s ease-out 0.75s;
-          animation: moveInBottom 1.3s ease-out 0.75s;
+  animation: moveInBottom 1.3s ease-out 0.75s;
   /*75s is the delay*/
-  -webkit-animation-fill-mode: backwards;
-          animation-fill-mode: backwards;
+  animation-fill-mode: backwards;
   /*before the animation really starts, the element doesn't appear*/
 }
 
@@ -416,7 +343,6 @@ body {
   top: 0;
   left: 0;
   z-index: -1;
-  -webkit-transition: all .3s;
   transition: all .3s;
 }
 
@@ -426,8 +352,7 @@ body {
 
 .btn:hover::after {
   /*what happens after we hover*/
-  -webkit-transform: scaleX(1.4) scaleY(1.6);
-          transform: scaleX(1.4) scaleY(1.6);
+  transform: scaleX(1.4) scaleY(1.6);
   /*increase the element*/
   opacity: 0;
   /*going to opacity 0*/
@@ -440,24 +365,19 @@ body {
   text-decoration: none;
   border-bottom: 1px solid #7ed56f;
   padding: 3px;
-  -webkit-transition: all .3s;
   transition: all .3s;
 }
 
 .btn-text:hover {
   background-color: #7ed56f;
   color: #fff;
-  -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
-          box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
-  -webkit-transform: translateY(-2px);
-          transform: translateY(-2px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
 }
 
 .btn-text:active {
-  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  transform: translateY(0);
 }
 
 .composition {
@@ -467,11 +387,9 @@ body {
 
 .composition__photo {
   width: 55%;
-  -webkit-box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
-          box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
   border-radius: 2px;
   position: absolute;
-  -webkit-transition: all .3s;
   transition: all .3s;
   z-index: 10;
   outline-offset: 2rem;
@@ -483,8 +401,7 @@ body {
     float: left;
     position: relative;
     width: 33.3333%;
-    -webkit-box-shadow: 0 1.5rem 2.5rem rgba(0, 0, 0, 0.2);
-            box-shadow: 0 1.5rem 2.5rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1.5rem 2.5rem rgba(0, 0, 0, 0.2);
   }
 }
 
@@ -497,8 +414,7 @@ body {
 @media (max-width: 56.25em) {
   .composition__photo--p1 {
     top: 0;
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
+    transform: scale(1.2);
   }
 }
 
@@ -511,8 +427,7 @@ body {
 @media (max-width: 56.25em) {
   .composition__photo--p2 {
     top: -1rem;
-    -webkit-transform: scale(1.3);
-            transform: scale(1.3);
+    transform: scale(1.3);
     z-index: 100;
   }
 }
@@ -527,25 +442,21 @@ body {
   .composition__photo--p3 {
     top: 1rem;
     left: 0;
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
+    transform: scale(1.1);
   }
 }
 
 .composition__photo:hover {
   outline: 1.5rem solid #7ed56f;
   /*better to use outline istead of border so we can set an ofset*/
-  -webkit-transform: scale(1.4) translateY(0.5rem);
-          transform: scale(1.4) translateY(0.5rem);
-  -webkit-box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
-          box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+  transform: scale(1.4) translateY(0.5rem);
+  box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
   z-index: 20;
   /*image will overlapse the others because z-index will be higher*/
 }
 
 .composition:hover .composition__photo:not(:hover) {
-  -webkit-transform: scale(0.9);
-          transform: scale(0.9);
+  transform: scale(0.9);
 }
 
 .feature-box {
@@ -554,12 +465,8 @@ body {
   padding: 2.5rem;
   text-align: center;
   border-radius: 5px;
-  -webkit-box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
-          box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
-  -webkit-transition: -webkit-transform .3s;
-  transition: -webkit-transform .3s;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
   transition: transform .3s;
-  transition: transform .3s, -webkit-transform .3s;
   /*= 900px*/
 }
 
@@ -573,7 +480,6 @@ body {
   font-size: 6rem;
   margin-bottom: .5rem;
   /*special gradiant on font*/
-  background-image: -webkit-gradient(linear, left top, right top, from(#55c57a), to(#28b485));
   background-image: linear-gradient(to right, #55c57a, #28b485);
   display: inline-block;
   letter-spacing: 2px;
@@ -589,13 +495,11 @@ body {
 }
 
 .feature-box:hover {
-  -webkit-transform: translateY(-1.5rem) scale(1.03);
-          transform: translateY(-1.5rem) scale(1.03);
+  transform: translateY(-1.5rem) scale(1.03);
 }
 
 .card {
-  -webkit-perspective: 150rem;
-          perspective: 150rem;
+  perspective: 150rem;
   /*give our card perspective*/
   -moz-perspective: 150rem;
   position: relative;
@@ -606,19 +510,16 @@ body {
 .card__side {
   height: 51rem;
   /*important to repeat same as the parent element*/
-  -webkit-transition: all 1s ease;
   transition: all 1s ease;
   /*"ease" is important as well*/
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  backface-visibility: hidden;
   /*hide the backpart of an element (can't see the card from the backpart)*/
   border-radius: 5px;
-  -webkit-box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
-          box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
   overflow: hidden;
   /*because the image overflow the parent and we still want the border-radius*/
 }
@@ -628,36 +529,30 @@ body {
 }
 
 .card__side--back {
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
+  transform: rotateY(180deg);
   /*before we hover the card, the back is already flipped*/
 }
 
 .card__side--back-1 {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#ffb900), to(#ff7730));
   background-image: linear-gradient(to bottom right, #ffb900, #ff7730);
 }
 
 .card__side--back-2 {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#55c57a), to(#28b485));
   background-image: linear-gradient(to bottom right, #55c57a, #28b485);
 }
 
 .card__side--back-3 {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#2998ff), to(#5643fa));
   background-image: linear-gradient(to bottom right, #2998ff, #5643fa);
 }
 
 .card:hover .card__side--front {
   /*when we over the card, we want the FRONT SIDE  to transform*/
-  -webkit-transform: rotateY(-180deg);
-          transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
 }
 
 .card:hover .card__side--back {
   /*come back to initial stage and become visible*/
-  -webkit-transform: rotateY(0);
-          transform: rotateY(0);
+  transform: rotateY(0);
 }
 
 .card__picture {
@@ -666,24 +561,20 @@ body {
   background-blend-mode: screen;
   /*important to blend the image and the gradient*/
   /*should always start by the prefix even if we add it after*/
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
 }
 
 .card__picture--1 {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#ffb900), to(#ff7730)), url(../img/nat-5.jpg);
   background-image: linear-gradient(to bottom right, #ffb900, #ff7730), url(../img/nat-5.jpg);
   /*!!relative to the "compiled" main.css file, that's why we move one layer up*/
 }
 
 .card__picture--2 {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#55c57a), to(#28b485)), url(../img/nat-6.jpg);
   background-image: linear-gradient(to bottom right, #55c57a, #28b485), url(../img/nat-6.jpg);
   /*!!relative to the "compiled" main.css file, that's why we move one layer up*/
 }
 
 .card__picture--3 {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#2998ff), to(#5643fa)), url(../img/nat-7.jpg);
   background-image: linear-gradient(to bottom right, #2998ff, #5643fa), url(../img/nat-7.jpg);
   /*!!relative to the "compiled" main.css file, that's why we move one layer up*/
 }
@@ -710,17 +601,14 @@ body {
 }
 
 .card__heading--span--1 {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 185, 0, 0.85)), to(rgba(255, 119, 48, 0.85)));
   background-image: linear-gradient(to bottom right, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85));
 }
 
 .card__heading--span--2 {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(85, 197, 122, 0.85)), to(rgba(40, 180, 133, 0.85)));
   background-image: linear-gradient(to bottom right, rgba(85, 197, 122, 0.85), rgba(40, 180, 133, 0.85));
 }
 
 .card__heading--span--3 {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(41, 152, 255, 0.85)), to(rgba(86, 67, 250, 0.85)));
   background-image: linear-gradient(to bottom right, rgba(41, 152, 255, 0.85), rgba(86, 67, 250, 0.85));
 }
 
@@ -749,8 +637,7 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   width: 90%;
   text-align: center;
 }
@@ -775,25 +662,20 @@ body {
     height: auto;
     border-radius: 5px;
     background-color: #fff;
-    -webkit-box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
-            box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
   }
   .card__side {
     height: auto;
     position: relative;
-    -webkit-box-shadow: none;
-            box-shadow: none;
+    box-shadow: none;
   }
   .card__side--back {
-    -webkit-transform: rotateY(0);
-            transform: rotateY(0);
+    transform: rotateY(0);
     /*we don't want the back part to rotate anymore*/
-    -webkit-clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
-            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
   }
   .card:hover .card__side--front {
-    -webkit-transform: rotateY(0);
-            transform: rotateY(0);
+    transform: rotateY(0);
     /*note rotation needed*/
   }
   .card__details {
@@ -803,8 +685,7 @@ body {
     position: relative;
     top: 0%;
     left: 0%;
-    -webkit-transform: translate(0);
-            transform: translate(0);
+    transform: translate(0);
     width: 100%;
     padding: 7rem 4rem 4rem 4rem;
   }
@@ -819,15 +700,13 @@ body {
 .story {
   width: 75%;
   margin: 0 auto;
-  -webkit-box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
-          box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
   background-color: rgba(255, 255, 255, 0.6);
   border-radius: 3px;
   padding: 5rem;
   padding-left: 9rem;
   font-size: 1.6rem;
-  -webkit-transform: skewX(-12deg);
-          transform: skewX(-12deg);
+  transform: skewX(-12deg);
   position: relative;
   /*= 900px*/
   /*= 600px*/
@@ -843,8 +722,7 @@ body {
 
 @media (max-width: 37.5em) {
   .story {
-    -webkit-transform: skewX(0);
-            transform: skewX(0);
+    transform: skewX(0);
   }
 }
 
@@ -853,8 +731,7 @@ body {
 }
 
 .story > * {
-  -webkit-transform: skewX(12deg);
-          transform: skewX(12deg);
+  transform: skewX(12deg);
 }
 
 .story__shape {
@@ -871,39 +748,32 @@ body {
   clip-path: circle(50% at 50% 50%);
   -webkit-clip-path: circle(50% at 50% 50%);
   /* this is how to give it some space*/
-  -webkit-transform: translateX(-3rem) skewX(12deg);
-          transform: translateX(-3rem) skewX(12deg);
+  transform: translateX(-3rem) skewX(12deg);
   /*= 600px*/
 }
 
 @media (max-width: 37.5em) {
   .story__shape {
-    -webkit-transform: translateX(0) skewX(0);
-            transform: translateX(0) skewX(0);
+    transform: translateX(0) skewX(0);
   }
 }
 
 .story__img {
   height: 100%;
   /*so it take the height of the circle*/
-  -webkit-transform: translateX(-4rem) scale(1.4);
-          transform: translateX(-4rem) scale(1.4);
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  -webkit-transition: all .3s;
+  transform: translateX(-4rem) scale(1.4);
+  backface-visibility: hidden;
   transition: all .3s;
 }
 
 .story__text {
-  -webkit-transform: skewX(12deg);
-          transform: skewX(12deg);
+  transform: skewX(12deg);
   /*= 600px*/
 }
 
 @media (max-width: 37.5em) {
   .story__text {
-    -webkit-transform: skewX(0);
-            transform: skewX(0);
+    transform: skewX(0);
   }
 }
 
@@ -911,35 +781,29 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, 20%);
-          transform: translate(-50%, 20%);
+  transform: translate(-50%, 20%);
   color: #fff;
   text-transform: uppercase;
   font-size: 1.5rem;
   font-weight: 300;
   text-align: center;
   opacity: 0;
-  -webkit-transition: all .3s;
   transition: all .3s;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  backface-visibility: hidden;
   /*useful for smooth animation*/
 }
 
 .story:hover .story__caption {
   /*as soon as the story is hoverd then we want to change the caption*/
   opacity: 1;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   /*give the impression that the text appear from bottom*/
 }
 
 .story:hover .story__img {
-  -webkit-transform: translateX(-4rem) scale(1);
-          transform: translateX(-4rem) scale(1);
+  transform: translateX(-4rem) scale(1);
   /*interesting to give filter directly to the img*/
-  -webkit-filter: blur(3px) brightness(90%);
-          filter: blur(3px) brightness(90%);
+  filter: blur(3px) brightness(90%);
 }
 
 .bg-video {
@@ -956,8 +820,7 @@ body {
 .bg-video__content {
   height: 100%;
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .form__group:not(:last-child) {
@@ -977,7 +840,6 @@ body {
   /*so the box doesn't move when focused*/
   display: block;
   width: 90%;
-  -webkit-transition: all .5s;
   transition: all .5s;
   /*= 900px*/
 }
@@ -990,8 +852,7 @@ body {
 
 .form__input:focus {
   outline: none;
-  -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
-          box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
   border-bottom: 3px solid #7ed56f;
 }
 
@@ -1010,7 +871,6 @@ body {
   margin-left: 2rem;
   margin-top: .7rem;
   display: block;
-  -webkit-transition: all .3s;
   transition: all .3s;
 }
 
@@ -1021,8 +881,7 @@ body {
   opacity: 0;
   visibility: hidden;
   /*NB: we use the opacity because we can't animate the visibility*/
-  -webkit-transform: translateY(-4rem);
-          transform: translateY(-4rem);
+  transform: translateY(-4rem);
   /*will go from up to down on Y axis*/
 }
 
@@ -1073,11 +932,9 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   background-color: #7ed56f;
   opacity: 0;
-  -webkit-transition: all, .3s;
   transition: all, .3s;
 }
 
@@ -1097,7 +954,6 @@ body {
   z-index: 9999;
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: all .8s;
   transition: all .8s;
   /*open state of the popup*/
 }
@@ -1106,21 +962,17 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   background-color: #fff;
   width: 75%;
-  -webkit-box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
-          box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
   border-radius: 7px;
   display: table;
   /*using display:table   and table-cell make that both element will have exactly the same height*/
   overflow: hidden;
   opacity: 0;
   /*repeat the translate from the mixins otherwise scale will overwrite alone*/
-  -webkit-transform: translate(-50%, -50%) scale(0.25);
-          transform: translate(-50%, -50%) scale(0.25);
-  -webkit-transition: all 1.2s .2s ease;
+  transform: translate(-50%, -50%) scale(0.25);
   transition: all 1.2s .2s ease;
   /*.2s here is the delay*/
   /*= 900px*/
@@ -1191,14 +1043,9 @@ body {
   font-size: 1.5rem;
   margin-bottom: 2rem;
   text-align: justify;
-  -webkit-column-count: 2;
-          column-count: 2;
-  -webkit-column-gap: 3rem;
-          column-gap: 3rem;
-  -webkit-column-rule: 1px solid #eee;
-          column-rule: 1px solid #eee;
-  -ms-hyphens: auto;
-  -webkit-hyphens: auto;
+  column-count: 2;
+  column-gap: 3rem;
+  column-rule: 1px solid #eee;
   hyphens: auto;
 }
 
@@ -1211,8 +1058,7 @@ body {
 .popup:target .popup__content {
   /*moment when the popup become the target*/
   opacity: 1;
-  -webkit-transform: translate(-50%, -50%) scale(1);
-          transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .popup__close:link, .popup__close:visited {
@@ -1236,7 +1082,6 @@ body {
 ****************************************/
 .header {
   height: 95vh;
-  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(85, 197, 122, 0.7)), to(rgba(40, 180, 133, 0.6))), url(../img/hero.jpg);
   background-image: linear-gradient(to right bottom, rgba(85, 197, 122, 0.7), rgba(40, 180, 133, 0.6)), url(../img/hero.jpg);
   background-size: cover;
   background-position: top;
@@ -1281,8 +1126,7 @@ body {
   top: 30%;
   /*will align the BEGINNING of the box*/
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   /*will move the box itself according to the position mentionned above*/
   text-align: center;
 }
@@ -1429,16 +1273,13 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   display: inline-block;
-  -webkit-transition: all .5s;
   transition: all .5s;
 }
 
 .footer__link:hover, .footer__link:active {
   color: #7ed56f;
-  -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
-          box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
-  -webkit-transform: rotate(5deg) scale(1.3);
-          transform: rotate(5deg) scale(1.3);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+  transform: rotate(5deg) scale(1.3);
 }
 
 .footer__copyright {
@@ -1461,14 +1302,12 @@ body {
   font-size: 2.3rem;
   color: #fff;
   margin-left: 1rem;
-  -webkit-transition: all .4s;
   transition: all .4s;
 }
 
 .footer__github:hover {
   color: #7ed56f;
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 .navigation__checkbox {
@@ -1487,8 +1326,7 @@ body {
   border-radius: 50%;
   z-index: 2000;
   /*more than the background*/
-  -webkit-box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
-          box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
   text-align: center;
   cursor: pointer;
   /*= 900px*/
@@ -1520,10 +1358,7 @@ body {
   right: 6.5rem;
   background-image: radial-gradient(#55c57a, #28b485);
   z-index: 1000;
-  -webkit-transition: -webkit-transform 1.3s cubic-bezier(0.83, 0, 0.17, 1);
-  transition: -webkit-transform 1.3s cubic-bezier(0.83, 0, 0.17, 1);
   transition: transform 1.3s cubic-bezier(0.83, 0, 0.17, 1);
-  transition: transform 1.3s cubic-bezier(0.83, 0, 0.17, 1), -webkit-transform 1.3s cubic-bezier(0.83, 0, 0.17, 1);
   /*= 900px*/
   /*= 600px*/
 }
@@ -1553,7 +1388,6 @@ body {
   width: 0;
   /*otherwise the links are still there and work but just invisible*/
   /*the value of 0 for width is just for when the menu is not shown*/
-  -webkit-transition: all 1.3s cubic-bezier(0.68, -0.6, 0.32, 1.6);
   transition: all 1.3s cubic-bezier(0.68, -0.6, 0.32, 1.6);
 }
 
@@ -1563,8 +1397,7 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   width: 100%;
 }
 
@@ -1583,7 +1416,6 @@ body {
   text-transform: uppercase;
   background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #fff 50%);
   background-size: 220%;
-  -webkit-transition: all 1s;
   transition: all 1s;
 }
 
@@ -1595,14 +1427,12 @@ body {
 .navigation__link:hover, .navigation__link:active {
   background-position: 100%;
   color: #28b485;
-  -webkit-transform: translateX(1rem);
-          transform: translateX(1rem);
+  transform: translateX(1rem);
   border-radius: 25px;
 }
 
 .navigation__checkbox:checked ~ .navigation__background {
-  -webkit-transform: scale(80);
-          transform: scale(80);
+  transform: scale(80);
 }
 
 .navigation__checkbox:checked ~ .navigation__nav {
@@ -1626,7 +1456,6 @@ body {
   content: "";
   position: absolute;
   left: 0;
-  -webkit-transition: all .7s;
   transition: all .7s;
 }
 
@@ -1654,15 +1483,13 @@ body {
 .navigation__checkbox:checked + .navigation__button .navigation__icon::before {
   top: 0;
   /*to have it centered and make the the X */
-  -webkit-transform: rotate(135deg);
-          transform: rotate(135deg);
+  transform: rotate(135deg);
   /*could be 45deg as well*/
 }
 
 .navigation__checkbox:checked + .navigation__button .navigation__icon::after {
   top: 0;
-  -webkit-transform: rotate(-135deg);
-          transform: rotate(-135deg);
+  transform: rotate(-135deg);
 }
 
 .section-about {
@@ -1688,11 +1515,9 @@ body {
 
 .section-features {
   padding: 20rem 0;
-  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(85, 197, 122, 0.7)), to(rgba(40, 180, 133, 0.6))), url(../img/nat-4.jpg);
   background-image: linear-gradient(to right bottom, rgba(85, 197, 122, 0.7), rgba(40, 180, 133, 0.6)), url(../img/nat-4.jpg);
   background-size: cover;
-  -webkit-transform: skewY(-7deg);
-          transform: skewY(-7deg);
+  transform: skewY(-7deg);
   /*looks like a paralepipede now*/
   margin-top: -10rem;
   /*we want it to cover the other section*/
@@ -1701,8 +1526,7 @@ body {
 
 .section-features > * {
   /*select ALL THE DIRET CHILDS OF THE SECTION*/
-  -webkit-transform: skewY(7deg);
-          transform: skewY(7deg);
+  transform: skewY(7deg);
   /* why here we have 7 ? to it cancels the skew applied above, we don't want the elements to be skewed */
 }
 
@@ -1747,7 +1571,6 @@ body {
 
 .section-book {
   padding: 15rem 0;
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#55c57a), to(#28b485));
   background-image: linear-gradient(to right bottom, #55c57a, #28b485);
   /*= 900px*/
 }
@@ -1762,8 +1585,7 @@ body {
   background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 50%, transparent 50%), url(/img/nat-10.jpg);
   background-size: 100%;
   border-radius: 5px;
-  -webkit-box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3);
-          box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3);
   /*= 1200px*/
   /*= 900px*/
 }
@@ -1773,15 +1595,13 @@ body {
     background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 65%, transparent 65%), url(/img/nat-10.jpg);
     background-size: cover;
     border-radius: 5px;
-    -webkit-box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3);
-            box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3);
     background-size: cover;
   }
 }
 
 @media (max-width: 56.25em) {
   .book {
-    background-image: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.8)), to(rgba(255, 255, 255, 0.8))), url(/img/nat-10.jpg);
     background-image: linear-gradient(to right, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 100%), url(/img/nat-10.jpg);
   }
 }
