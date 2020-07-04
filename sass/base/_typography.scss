@@ -89,6 +89,10 @@ body {
         transform: skewY(3deg) scale(1.03);
         text-shadow: 0.5rem 1rem 2rem rgba($color-black, .3);
     }
+
+    &:focus {
+        outline:none;
+    }
 }
 
 .heading-tertiary {

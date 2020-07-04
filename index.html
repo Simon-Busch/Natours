@@ -3,7 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
+        <!--Optimization for SEO !!-->
+        <meta name="description" content="Natours is a company that will help you building your next adventure">
         <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
 
         <link rel="stylesheet" href="css/icon-font.css"> <!--downloaded from https://linea.io/ -->
@@ -26,11 +27,11 @@
         
             <nav class="navigation__nav">
                 <ul class="navigation__list">
-                    <li class="navigation__item"><a href="#" class="navigation__link"><span>01</span>About Natours</a></li>
-                    <li class="navigation__item"><a href="#" class="navigation__link"><span>02</span>Your benefits</a></li>
-                    <li class="navigation__item"><a href="#" class="navigation__link"><span>03</span>Popular tours</a></li>
-                    <li class="navigation__item"><a href="#" class="navigation__link"><span>04</span>Stories</a></li>
-                    <li class="navigation__item"><a href="#" class="navigation__link"><span>05</span>Book now</a></li>
+                    <li class="navigation__item"><a href="#about" class="navigation__link"><span>01</span>About Natours</a></li>
+                    <li class="navigation__item"><a href="#benefits" class="navigation__link"><span>02</span>Your benefits</a></li>
+                    <li class="navigation__item"><a href="#tours" class="navigation__link"><span>03</span>Popular tours</a></li>
+                    <li class="navigation__item"><a href="#stories" class="navigation__link"><span>04</span>Stories</a></li>
+                    <li class="navigation__item"><a href="#book" class="navigation__link"><span>05</span>Book now</a></li>
                 </ul>
             </nav>
         </div>
@@ -49,12 +50,12 @@
                     <span class="heading-primary--sub">is where life happens</span>
                 </h1>
 
-                <a href="#" class="btn btn--white btn--animated">Discover our tours</a>
+                <a href="#tours" class="btn btn--white btn--animated">Discover our tours</a>
             </div>
         </header>
 
         <main>
-            <section class="section-about">
+            <section class="section-about" id="about">
                 <div class="u-center-text u-margin-bottom-big">
                     <h2 class="heading-secondary">
                         Exciting tours for adventurous people
@@ -101,17 +102,14 @@
                             <img src="img/nat-1-large.jpg" alt="nature photo 1" class="composition__photo composition__photo--p1">
                             <img src="img/nat-2-large.jpg" alt="nature photo 2" class="composition__photo composition__photo--p2">
                             <img src="img/nat-3-large.jpg" alt="nature photo 3" class="composition__photo composition__photo--p3">
-<<<<<<< HEAD
                         </div> 
-=======
                              -->
                         </div>
->>>>>>> e73f14a306debde1e184f6681f43647531c9e809
                     </div>
                 </div>
             </section>
 
-            <section class="section-features">
+            <section class="section-features" id="benefits">
                     
                 <div class="row">
                     <div class="col-1-of-4">
@@ -158,7 +156,7 @@
             </section>
 
             <section class="section-tours" id="section-tours">
-                <div class="u-center-text u-margin-bottom-big">
+                <div class="u-center-text u-margin-bottom-big" id="tours">
                     <h2 class="heading-secondary">
                         Most popular tours
                     </h2> 
@@ -272,7 +270,7 @@
 
             </section>
 
-            <section class="section-stories">  
+            <section class="section-stories" id="stories">  
                 
                 <div class="bg-video">
                     <video class="bg-video__content" autoplay muted loop>
@@ -336,7 +334,7 @@
 
             </section>
 
-            <section class="section-book">
+            <section class="section-book" id="book">
                 <div class="row">
                     <div class="book">
                         <div class="book__form">
@@ -534,5 +532,11 @@
         </section>
         -->
         <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+
+        <!--jquerry for smooth nav-->
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <!--Include waypoint http://imakewebthings.com/waypoints/-->
+        <script src="ressources/vendors/js/jquery.waypoints.min.js"></script>
+        <script src="JS/script.js"></script>
     </body>
 </html>
